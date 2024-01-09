@@ -8,9 +8,11 @@
         description: Router & basement WiFi access point
         icon: openwrt
         ping: flyer-ds.home.mliebman.com
+        siteMonitor: https://flyer-ds.home.mliebman.com/
     - flyer-us:
         href: https://flyer-us.home.mliebman.com/
         description: First floor WiFi access point
         icon: openwrt
         ping: flyer-us.home.mliebman.com
+        siteMonitor: https://flyer-us.home.mliebman.com/
 
