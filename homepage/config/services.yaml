@@ -31,4 +31,12 @@
         href: http://localhost:18123/
         description: RVC Home Assistant via tunnel
         icon: si-homeassistant
-
+- Observability:
+    - Healthchecks:
+        href: https://healthchecks.io/
+        description: Scheduled job monitoring
+        icon: healthchecks
+    - UptimeRobot:
+        href: https://uptimerobot.com/dashboard#mainDashboard
+        description: Service monitoring
+        icon: uptime-kuma
