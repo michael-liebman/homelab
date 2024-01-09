@@ -2,17 +2,13 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/latest/configs/services
 
-- My First Group:
-    - My First Service:
-        href: http://localhost/
-        description: Homepage is awesome
+- Network:
+    - flyer-ds:
+        href: https://flyer-ds.home.mliebman.com/
+        description: Router & basement WiFi access point
+        icon: openwrt
+    - flyer-us:
+        href: https://flyer-us.home.mliebman.com/
+        description: First floor WiFi access point
+        icon: openwrt
 
-- My Second Group:
-    - My Second Service:
-        href: http://localhost/
-        description: Homepage is the best
-
-- My Third Group:
-    - My Third Service:
-        href: http://localhost/
-        description: Homepage is 😎
