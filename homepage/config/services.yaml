@@ -15,4 +15,20 @@
         icon: openwrt
         ping: flyer-us.home.mliebman.com
         siteMonitor: https://flyer-us.home.mliebman.com/
+- RVC:
+    - Home Assistant RVC:
+        href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
+        icon: si-homeassistant
+    - Go2RTC RVC:
+        href: http://localhost:11984/
+        description: Camera interface (requires tunnel)
+        icon: mdi-cctv
+    - Portainer RVC:
+        href: https://localhost:9001/
+        description: Server management (requires tunnel)
+        icon: portainer
+    - RVC HA Tunnel:
+        href: http://localhost:18123/
+        description: RVC Home Assistant via tunnel
+        icon: si-homeassistant
 
