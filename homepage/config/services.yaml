@@ -31,6 +31,11 @@
             username: {{HOMEPAGE_VAR_VM0_TOKEN_ID}}
             password: {{HOMEPAGE_VAR_VM0_SECRET}}
             node: vm0
+    - Pi-hole:
+        href: http://192.168.2.5/admin/
+        description: DNS and ad blocking
+        icon: pi-hole
+        ping: 192.168.2.5
 - RVC:
     - Home Assistant RVC:
         href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
