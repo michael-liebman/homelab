@@ -15,6 +15,10 @@
         icon: openwrt
         ping: flyer-us.home.mliebman.com
         siteMonitor: https://flyer-us.home.mliebman.com/
+    - Print/Scan:
+        href: https://print-scan.home.mliebman.com/
+        icon: printer
+        ping: print-scan.home.mliebman.com
 - RVC:
     - Home Assistant RVC:
         href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
