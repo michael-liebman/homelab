@@ -19,6 +19,18 @@
         href: https://print-scan.home.mliebman.com/
         icon: printer
         ping: print-scan.home.mliebman.com
+    - Proxmox:
+        href: https://vm0.home.mliebman.com:8006/
+        description: Virtual Machine Hypervisor
+        icon: proxmox
+        ping: vm0.home.mliebman.com
+        siteMonitor: https://vm0.home.mliebman.com:8006/
+        widget:
+            type: proxmox
+            url: https://vm0.home.mliebman.com:8006
+            username: {{HOMEPAGE_VAR_VM0_TOKEN_ID}}
+            password: {{HOMEPAGE_VAR_VM0_SECRET}}
+            node: vm0
 - RVC:
     - Home Assistant RVC:
         href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
