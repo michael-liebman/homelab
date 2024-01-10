@@ -2,7 +2,7 @@
 # For configuration options and examples, please see:
 # https://gethomepage.dev/latest/configs/services
 
-- Network:
+- Network & Infrastructure:
     - flyer-ds:
         href: https://flyer-ds.home.mliebman.com/
         description: Router & basement WiFi access point
