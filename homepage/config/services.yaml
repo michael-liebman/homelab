@@ -36,6 +36,12 @@
         description: DNS and ad blocking
         icon: pi-hole
         ping: 192.168.2.5
+    - Matomo:
+        href: https://stats.mliebman.com/
+        description: Website statistics
+        icon: matomo
+        ping: stats.mliebman.com
+        siteMonitor: https://stats.mliebman.com/
 - RVC:
     - Home Assistant RVC:
         href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
