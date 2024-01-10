@@ -8,4 +8,6 @@ services:
     volumes:
       - /home/michael/docker/homepage/config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
+    env_file:
+      - /var/run/secrets/homepage.env
 
