@@ -67,3 +67,8 @@
         href: https://uptimerobot.com/dashboard#mainDashboard
         description: Service monitoring
         icon: uptime-kuma
+        widget:
+            type: uptimerobot
+            url: https://api.uptimerobot.com
+            key: {{HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY}}
+
