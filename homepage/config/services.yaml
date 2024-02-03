@@ -15,6 +15,12 @@
         icon: openwrt
         ping: flyer-us.home.mliebman.com
         siteMonitor: https://flyer-us.home.mliebman.com/
+    - Netbox:
+        href: https://netbox.home.mliebman.com/
+        description: IP Address Management & other network info
+        icon: netbox
+        ping: netbox.home.mliebman.com
+        siteMonitor: https://netbox.home.mliebman.com/
     - Print/Scan:
         href: https://print-scan.home.mliebman.com/
         icon: printer
