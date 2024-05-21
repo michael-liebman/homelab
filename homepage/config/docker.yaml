@@ -11,4 +11,3 @@
 
 docker01:
     socket: /var/run/docker.sock
-

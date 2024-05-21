@@ -34,8 +34,8 @@
         widget:
             type: proxmox
             url: https://vm0.home.mliebman.com:8006
-            username: {{HOMEPAGE_VAR_VM0_TOKEN_ID}}
-            password: {{HOMEPAGE_VAR_VM0_SECRET}}
+            username: "{{HOMEPAGE_VAR_VM0_TOKEN_ID}}"
+            password: "{{HOMEPAGE_VAR_VM0_SECRET}}"
             node: vm0
     - Pi-hole:
         href: http://192.168.2.5/admin/
@@ -76,5 +76,4 @@
         widget:
             type: uptimerobot
             url: https://api.uptimerobot.com
-            key: {{HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY}}
-
+            key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY}}"

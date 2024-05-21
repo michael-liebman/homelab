@@ -20,4 +20,3 @@ services:
 networks:
   caddy:
     external: true
-
