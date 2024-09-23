@@ -1,0 +1,4 @@
+[submodule "netbox"]
+	path = netbox
+	url = https://github.com/michael-liebman/netbox-docker.git
+	branch = release
