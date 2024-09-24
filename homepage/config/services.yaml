@@ -37,11 +37,12 @@
             username: "{{HOMEPAGE_VAR_VM0_TOKEN_ID}}"
             password: "{{HOMEPAGE_VAR_VM0_SECRET}}"
             node: vm0
-    - Pi-hole:
-        href: http://192.168.2.5/admin/
+    - Technitium: 
+        href: http://192.168.2.5:5380/
         description: DNS and ad blocking
-        icon: pi-hole
+        icon: technitium
         ping: 192.168.2.5
+        siteMonitor: http://192.168.2.5:5380/
     - Matomo:
         href: https://stats.mliebman.com/
         description: Website statistics
@@ -77,3 +78,4 @@
             type: uptimerobot
             url: https://api.uptimerobot.com
             key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY}}"
+
