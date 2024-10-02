@@ -11,9 +11,10 @@
         siteMonitor: https://flyer-ds.home.mliebman.com/
         widget:
             type: openwrt
-            url: https://flyer-ds.home.mliebman.com
+            url: https://flyer-ds.home.mliebman.com/ubus
             username: "{{HOMEPAGE_OPENWRT_USERNAME}}"
             password: "{{HOMEPAGE_OPENWRT_PASSWORD}}"
+            interface: wan
     - flyer-us:
         href: https://flyer-us.home.mliebman.com/
         description: First floor WiFi access point
