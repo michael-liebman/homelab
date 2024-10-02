@@ -1,0 +1,22 @@
+services:
+  wallos:
+    container_name: wallos
+    image: bellamy/wallos:2.26.0
+    ports:
+      - "8282:80/tcp"
+    environment:
+      TZ: 'America/New_York'
+    # Volumes store your data between container upgrades
+    volumes:
+      - './db:/var/www/html/db'
+      - './logos:/var/www/html/images/uploads/logos'
+    restart: unless-stopped
+    networks:
+      - caddy
+    labels:
+      caddy: subscription.home.mliebman.com
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.tls: internal
+networks:
+  caddy:
+    external: true
