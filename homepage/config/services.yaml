@@ -50,6 +50,11 @@
         icon: technitium
         ping: 192.168.2.5
         siteMonitor: http://192.168.2.5:5380/
+        widget:
+            type: technitium
+            url: http://192.168.2.5:5380
+            key: "{{HOMEPAGE_TECHNITIUM_KEY}}"
+            range: LastDay
     - Matomo:
         href: https://stats.mliebman.com/
         description: Website statistics
