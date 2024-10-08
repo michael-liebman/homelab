@@ -6,3 +6,19 @@ title: Liebman
 providers:
   openweathermap: openweathermapapikey
   weatherapi: weatherapiapikey
+layout:
+  Applications:
+    tab: Applications & Links
+  Network & Infrastructure:
+    tab: Admin Stuff
+  RVC:
+    tab: Admin Stuff
+  Observability:
+    tab: Admin Stuff
+  Developer:
+    tab: Admin Stuff
+  Social:
+    tab: Applications & Links
+  Entertainment:
+    tab: Applications & Links
+

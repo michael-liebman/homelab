@@ -3,9 +3,30 @@
 # https://gethomepage.dev/latest/configs/bookmarks
 
 - Developer:
-    - Github:
+    - Github (U):
         - abbr: GH
-          href: https://github.com/
+          icon: si-github
+          href: https://github.com/michaelliebman
+    - Github (O):
+        - abbr: GH
+          icon: si-github
+          href: https://github.com/michael-liebman
+    - Jira:
+        - abbr: JI
+          icon: si-jira
+          href: https://liebman.atlassian.net/jira/
+    - Bitbucket:
+        - abbr: BU
+          icon: si-bitbucket
+          href: https://bitbucket.org/msl521/workspace/overview/
+    - Renovate:
+        - abbr: RE
+          icon: si-renovate
+          href: https://developer.mend.io/
+    - CircleCI:
+        - abbr: CI
+          icon: si-circleci
+          href: https://app.circleci.com/
 
 - Social:
     - Reddit:
