@@ -19,6 +19,10 @@
         - abbr: BU
           icon: si-bitbucket
           href: https://bitbucket.org/msl521/workspace/overview/
+    - Renovate:
+        - abbr: RE
+          icon: si-renovate
+          href: https://developer.mend.io/
 
 - Social:
     - Reddit:
