@@ -9,6 +9,16 @@
         icon: sh-home-assistant
         ping: homeassistant.home.mliebman.com
         siteMonitor: http://homeassistant.home.mliebman.com:8123/
+    - Ghostfolio:
+        href: https://investing.home.mliebman.com/
+        description: Investment Porfolio Management
+        icon: sh-ghostfolio
+        ping: investing.home.mliebman.com
+        siteMonitor: https://investing.home.mliebman.com/
+        widget:
+            type: ghostfolio
+            url: https://investing.home.mliebman.com/
+            key: "{{HOMEPAGE_GHOST_FOLIO_KEY}}"
     - Wallos:
         href: https://subscription.home.mliebman.com/
         description: Subscription Tracker
@@ -50,7 +60,7 @@
             username: "{{HOMEPAGE_VAR_VM0_TOKEN_ID}}"
             password: "{{HOMEPAGE_VAR_VM0_SECRET}}"
             node: vm0
-    - Technitium: 
+    - Technitium:
         href: http://192.168.2.5:5380/
         description: DNS and ad blocking
         icon: technitium
@@ -91,4 +101,3 @@
             type: uptimerobot
             url: https://api.uptimerobot.com
             key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY}}"
-
