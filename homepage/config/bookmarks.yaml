@@ -7,6 +7,10 @@
         - abbr: GH
           icon: si-github
           href: https://github.com/michaelliebman
+    - Github (O):
+        - abbr: GH
+          icon: si-github
+          href: https://github.com/michael-liebman
 
 - Social:
     - Reddit:
