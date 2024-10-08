@@ -15,6 +15,10 @@
         - abbr: JI
           icon: si-jira
           href: https://liebman.atlassian.net/jira/
+    - Bitbucket:
+        - abbr: BU
+          icon: si-bitbucket
+          href: https://bitbucket.org/msl521/workspace/overview/
 
 - Social:
     - Reddit:
