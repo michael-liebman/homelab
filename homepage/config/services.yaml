@@ -3,6 +3,12 @@
 # https://gethomepage.dev/latest/configs/services
 
 - Applications:
+    - Home Assistant:
+        href: http://homeassistant.home.mliebman.com:8123/
+        description: Automation
+        icon: sh-home-assistant
+        ping: homeassistant.home.mliebman.com
+        siteMonitor: http://homeassistant.home.mliebman.com:8123/
     - Wallos:
         href: https://subscription.home.mliebman.com/
         description: Subscription Tracker
