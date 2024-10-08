@@ -23,6 +23,10 @@
         - abbr: RE
           icon: si-renovate
           href: https://developer.mend.io/
+    - CircleCI:
+        - abbr: CI
+          icon: si-circleci
+          href: https://app.circleci.com/
 
 - Social:
     - Reddit:
