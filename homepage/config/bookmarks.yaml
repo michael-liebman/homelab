@@ -11,6 +11,10 @@
         - abbr: GH
           icon: si-github
           href: https://github.com/michael-liebman
+    - Jira:
+        - abbr: JI
+          icon: si-jira
+          href: https://liebman.atlassian.net/jira/
 
 - Social:
     - Reddit:
