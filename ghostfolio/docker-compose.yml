@@ -33,7 +33,7 @@ services:
       - internal
 
   postgres:
-    image: docker.io/library/postgres:15
+    image: docker.io/library/postgres:17
     cap_drop:
       - ALL
     cap_add:
