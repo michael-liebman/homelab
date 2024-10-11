@@ -28,6 +28,9 @@ services:
       caddy: investing.home.mliebman.com
       caddy.reverse_proxy: "{{upstreams 3333}}"
       caddy.tls: internal
+    networks:
+      - caddy
+      - internal
 
   postgres:
     image: docker.io/library/postgres:15
@@ -50,6 +53,8 @@ services:
       retries: 5
     volumes:
       - postgres:/var/lib/postgresql/data
+    networks:
+      - internal
 
   redis:
     image: docker.io/library/redis:alpine
@@ -66,6 +71,8 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    networks:
+      - internal
 
 volumes:
   postgres:
@@ -73,3 +80,4 @@ volumes:
 networks:
   caddy:
     external: true
+  internal:
