@@ -1,0 +1,21 @@
+services:
+  gluetun:
+    image: qmcgaw/gluetun:v3.39.1
+    # container_name: gluetun
+    privileged: true
+    cap_add:
+      - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    volumes:
+      - ./data/gluetun:/gluetun
+    environment:
+      - VPN_SERVICE_PROVIDER=nordvpn
+      - VPN_TYPE=wireguard
+      - SERVER_COUNTRIES=United States
+      - TZ=America/New_York
+      - UPDATER_PERIOD=24h
+      - DOT_PROVIDERS=quad9
+    env_file:
+      - ../../secrets/gluetun.env
+    restart: unless-stopped
