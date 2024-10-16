@@ -2,6 +2,7 @@ services:
   gluetun:
     image: qmcgaw/gluetun:v3.39.1
     # container_name: gluetun
+    privileged: true
     cap_add:
       - NET_ADMIN
     devices:
