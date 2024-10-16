@@ -16,5 +16,5 @@ services:
       - UPDATER_PERIOD=24h
       - DOT_PROVIDERS=quad9
     env_file:
-      - /var/run/secrets/gluetun.env
+      - ../../secrets/gluetun.env
     restart: unless-stopped
