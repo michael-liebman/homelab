@@ -25,7 +25,6 @@ services:
     volumes:
       - ./data/readarr:/config
       - ./data/books:/books
-      - ./data/downloads:/downloads
     env_file:
       - ../../secrets/readarr.env
     restart: unless-stopped
