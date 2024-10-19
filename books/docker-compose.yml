@@ -25,6 +25,10 @@ services:
     volumes:
       - ./data/readarr:/config
       - ./data/books:/books
+    environment:
+      - TZ=America/New_York
+      - PUID=1000
+      - PGID=101
     env_file:
       - ../../secrets/readarr.env
     restart: unless-stopped
