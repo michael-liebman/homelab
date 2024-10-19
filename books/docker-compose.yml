@@ -38,6 +38,18 @@ services:
       caddy: readarr.home.mliebman.com
       caddy.reverse_proxy: "{{upstreams 8787}}"
       caddy.tls: internal
+  sabnzbd:
+    image: lscr.io/linuxserver/sabnzbd:4.3.3
+    container_name: sabnzbd
+    network_mode: service:gluetun
+    environment:
+      - TZ=America/New_York
+      - PUID=1000
+      - PGID=101
+    volumes:
+      - ./data/sabnzbd:/config
+      - ./data/books:/downloads
+    restart: unless-stopped
 networks:
   caddy:
     external: true
