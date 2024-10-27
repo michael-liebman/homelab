@@ -26,6 +26,16 @@
         ping: subscription.home.mliebman.com
         siteMonitor: https://subscription.home.mliebman.com/
 - Media:
+    - Readarr:
+        href: https://readarr.home.mliebman.com/
+        description: Book & audio book management
+        icon: sh-readarr
+        ping: readarr.home.mliebman.com
+        siteMonitor: https://readarr.home.mliebman.com/
+        widget:
+            type: readarr
+            url: https://readarr.home.mliebman.com/
+            key: "{{HOMEPAGE_READARR_KEY}}"
     - qBittorrent:
         href: https://torrent.home.mliebman.com/
         description: BitTorrent client
