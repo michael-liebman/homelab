@@ -60,7 +60,7 @@ services:
     restart: unless-stopped
     network_mode: service:gluetun
   bookbounty:
-    image: thewicklowwolf/bookbounty:v0.1.7
+    image: thewicklowwolf/bookbounty:0.1.7
     container_name: bookbounty
     volumes:
       - ./data/bookbounty:/bookbounty/config
