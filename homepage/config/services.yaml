@@ -25,6 +25,18 @@
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallos.png
         ping: subscription.home.mliebman.com
         siteMonitor: https://subscription.home.mliebman.com/
+- Media:
+    - qBittorrent:
+        href: https://torrent.home.mliebman.com/
+        description: BitTorrent client
+        icon: sh-qbittorrent
+        ping: torrent.home.mliebman.com
+        siteMonitor: https://torrent.home.mliebman.com/
+        widget:
+            type: qbittorrent
+            url: https://torrent.home.mliebman.com/
+            username: "{{HOMEPAGE_QBITTORRENT_USERNAME}}"
+            password: "{{HOMEPAGE_QBITTORRENT_PASSWORD}}"
 - Network & Infrastructure:
     - flyer-ds:
         href: https://flyer-ds.home.mliebman.com/
