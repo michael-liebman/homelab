@@ -23,6 +23,8 @@ services:
       caddy_0: torrent.home.mliebman.com
       caddy_0.reverse_proxy: "{{upstreams 8080}}"
       caddy_0.tls: internal
+    networks:
+      - caddy
   readarr:
     image: lscr.io/linuxserver/readarr:nightly-version-0.4.1.2648
     container_name: readarr
