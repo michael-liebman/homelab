@@ -16,6 +16,7 @@ services:
       - TZ=America/New_York
       - UPDATER_PERIOD=24h
       - DOT_PROVIDERS=quad9
+      - FIREWALL_OUTBOUND_SUBNETS=172.21.0.0/16
     env_file:
       - ../../secrets/gluetun.env
     restart: unless-stopped
@@ -28,6 +29,7 @@ services:
       caddy_1.tls: internal
     networks:
       - caddy
+      - internal
   readarr:
     image: lscr.io/linuxserver/readarr:nightly-version-0.4.1.2648
     container_name: readarr
@@ -43,6 +45,7 @@ services:
     restart: unless-stopped
     networks:
       - caddy
+      - internal
     labels:
       caddy: readarr.home.mliebman.com
       caddy.reverse_proxy: "{{upstreams 8787}}"
@@ -78,5 +81,11 @@ services:
       - PUID=1000
       - PGID=101
 networks:
+  internal:
+    internal: true
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.21.0.0/16
   caddy:
     external: true
