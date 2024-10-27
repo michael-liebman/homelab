@@ -30,7 +30,7 @@ services:
     container_name: readarr
     volumes:
       - ./data/readarr:/config
-      - ./data/books:/books
+      - ./data:/data
     environment:
       - TZ=America/New_York
       - PUID=1000
@@ -53,7 +53,7 @@ services:
       - PGID=101
     volumes:
       - ./data/qbittorrent:/config
-      - ./data/books/downloads:/downloads
+      - ./data/torrents:/data/torrents
     restart: unless-stopped
     network_mode: service:gluetun
 networks:
