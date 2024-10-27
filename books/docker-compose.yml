@@ -23,6 +23,9 @@ services:
       caddy_0: torrent.home.mliebman.com
       caddy_0.reverse_proxy: "{{upstreams 8080}}"
       caddy_0.tls: internal
+      caddy_1: bookbounty.home.mliebman.com
+      caddy_1.reverse_proxy: "{{upstreams 5000}}"
+      caddy_1.tls: internal
     networks:
       - caddy
   readarr:
@@ -56,6 +59,24 @@ services:
       - ./data/torrents:/data/torrents
     restart: unless-stopped
     network_mode: service:gluetun
+  bookbounty:
+    image: thewicklowwolf/bookbounty:v0.1.7
+    container_name: bookbounty
+    volumes:
+      - ./data/bookbounty:/bookbounty/config
+      - ./data/media/books/_unprocessed:/bookbounty/downloads
+      - /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    network_mode: service:gluetun
+    env_file:
+      - path: ../../secrets/bookbounty.env
+        required: false
+    environment:
+      - selected_path_type=file
+      - library_scan_on_completion=True
+      - readarr_address=http://readarr:8787
+      - PUID=1000
+      - PGID=101
 networks:
   caddy:
     external: true
