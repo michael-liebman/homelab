@@ -77,7 +77,7 @@ services:
     environment:
       - selected_path_type=file
       - library_scan_on_completion=True
-      - readarr_address=http://readarr:8787
+      - readarr_address=http://172.21.0.2:8787
       - PUID=1000
       - PGID=101
 networks:
