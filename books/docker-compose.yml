@@ -50,6 +50,24 @@ services:
       caddy: readarr.home.mliebman.com
       caddy.reverse_proxy: "{{upstreams 8787}}"
       caddy.tls: internal
+  lazylibrarian:
+    image: lscr.io/linuxserver/lazylibrarian:version-d2a11ef2
+    container_name: lazylibrarian
+    environment:
+      - TZ=America/New_York
+      - PUID=1000
+      - PGID=101
+      - DOCKER_MODS=linuxserver/mods:universal-calibre|linuxserver/mods:lazylibrarian-ffmpeg
+    restart: unless-stopped
+    volumes:
+      - ./data/lazylibrarian:/config
+      - ./data:/data
+    networks:
+      - caddy
+    labels:
+      caddy: lazylibrarian.home.mliebman.com
+      caddy.reverse_proxy: "{{upstreams 5299}}"
+      caddy.tls: internal
   qbittorrent:
     image: lscr.io/linuxserver/qbittorrent:version-5.0.0-r2
     container_name: qbittorrent
