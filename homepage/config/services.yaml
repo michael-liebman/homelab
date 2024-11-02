@@ -77,6 +77,11 @@
         description: API automation
         icon: sh-n8n
         siteMonitor: https://n8n.home.mliebman.com
+    - Backup:
+        href: https://backup.home.mliebman.com/
+        description: Backups
+        icon: sh-restic
+        siteMonitor: https://backup.home.mliebman.com
 - RVC:
     - Home Assistant RVC:
         href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
