@@ -72,6 +72,11 @@
         icon: matomo
         ping: stats.mliebman.com
         siteMonitor: https://stats.mliebman.com/
+    - N8N:
+        href: https://n8n.home.mliebman.com/
+        description: API automation
+        icon: sh-n8n
+        siteMonitor: https://n8n.home.mliebman.com
 - RVC:
     - Home Assistant RVC:
         href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
