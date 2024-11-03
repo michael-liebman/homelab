@@ -19,6 +19,32 @@ services:
       caddy: backup.home.mliebman.com
       caddy.reverse_proxy: "{{upstreams 9898}}"
       caddy.tls: internal
+  syncthing:
+    image: syncthing/syncthing:1.28.0
+    container_name: syncthing
+    hostname: syncthing
+    environment:
+      - PUID=1000
+      - PGID=101
+    volumes:
+      - ./syncthing:/var/syncthing
+      - ../wallos/db:/var/syncthing-storage/wallos
+    ports:
+      - 22000:22000/tcp # TCP file transfers
+      - 22000:22000/udp # QUIC file transfers
+      - 21027:21027/udp # Receive local discovery broadcasts
+    restart: unless-stopped
+    healthcheck:
+      test: curl -fkLsS -m 2 127.0.0.1:8384/rest/noauth/health | grep -o --color=never OK || exit 1
+      interval: 1m
+      timeout: 10s
+      retries: 3
+    networks:
+      - caddy
+    labels:
+      caddy: syncthing.home.mliebman.com
+      caddy.reverse_proxy: "{{upstreams 8384}}"
+      caddy.tls: internal
 networks:
   caddy:
     external: true
