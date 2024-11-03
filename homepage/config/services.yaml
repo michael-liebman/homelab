@@ -82,6 +82,11 @@
         description: Backups
         icon: sh-restic
         siteMonitor: https://backup.home.mliebman.com
+    - Syncthing:
+        href: https://syncthing.home.mliebman.com/
+        description: File sharing
+        icon: sh-syncthing
+        siteMonitor: https://syncthing.home.mliebman.com
 - RVC:
     - Home Assistant RVC:
         href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
