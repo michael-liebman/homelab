@@ -29,6 +29,7 @@ services:
     volumes:
       - ./syncthing:/var/syncthing
       - ../wallos/db:/var/syncthing-storage/wallos
+      - ../../secrets/:/var/syncthing-storage/secrets
     ports:
       - 22000:22000/tcp # TCP file transfers
       - 22000:22000/udp # QUIC file transfers
