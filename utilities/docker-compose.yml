@@ -9,6 +9,22 @@ services:
       caddy: it-tools.home.mliebman.com
       caddy.reverse_proxy: "{{upstreams 80}}"
       caddy.tls: internal
+  stirling-pdf:
+    image: frooodle/s-pdf:0.31.1
+    container_name: pdf-tools
+    restart: unless-stopped
+    networks:
+      - caddy
+    labels:
+      caddy: pdf-tools.home.mliebman.com
+      caddy.reverse_proxy: "{{upstreams 8080}}"
+      caddy.tls: internal
+    volumes:
+      - ./stirling-pdf/trainingData:/usr/share/tessdata
+      - ./stirling-pdf/extraConfig:/configs
+    environment:
+      - LANGS=en_US
+      - DOCKER_ENABLE_SECURITY=false
 networks:
   caddy:
     external: true

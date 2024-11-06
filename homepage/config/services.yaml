@@ -31,6 +31,11 @@
         description: A collection of tech tools
         icon: sh:it-tools
         siteMonitor: https://it-tools.home.mliebman.com/
+    - PDF Tools:
+        href: https://pdf-tools.home.mliebman.com/
+        description: A collection of PDF tools
+        icon: sh:stirling-pdf
+        siteMonitor: https://pdf-tools.home.mliebman.com/
 - Network & Infrastructure:
     - flyer-ds:
         href: https://flyer-ds.home.mliebman.com/
