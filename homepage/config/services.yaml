@@ -25,6 +25,12 @@
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallos.png
         ping: subscription.home.mliebman.com
         siteMonitor: https://subscription.home.mliebman.com/
+- Miscellaneous:
+    - IT-Tools:
+        href: https://it-tools.home.mliebman.com/
+        description: A collection of tech tools
+        icon: sh:it-tools
+        siteMonitor: https://it-tools.home.mliebman.com/
 - Network & Infrastructure:
     - flyer-ds:
         href: https://flyer-ds.home.mliebman.com/
