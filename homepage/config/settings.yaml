@@ -9,6 +9,8 @@ providers:
 layout:
   Applications:
     tab: Applications & Links
+  Miscellaneous:
+    tab: Applications & Links
   Network & Infrastructure:
     tab: Admin Stuff
   RVC:
@@ -21,4 +23,3 @@ layout:
     tab: Applications & Links
   Entertainment:
     tab: Applications & Links
-
