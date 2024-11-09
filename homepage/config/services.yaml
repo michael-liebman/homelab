@@ -13,7 +13,6 @@
         href: https://investing.home.mliebman.com/
         description: Investment Porfolio Management
         icon: sh-ghostfolio
-        ping: investing.home.mliebman.com
         siteMonitor: https://investing.home.mliebman.com/
         widget:
             type: ghostfolio
@@ -23,7 +22,6 @@
         href: https://subscription.home.mliebman.com/
         description: Subscription Tracker
         icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/wallos.png
-        ping: subscription.home.mliebman.com
         siteMonitor: https://subscription.home.mliebman.com/
 - Miscellaneous:
     - IT-Tools:
@@ -53,7 +51,6 @@
         href: https://netbox.home.mliebman.com/
         description: IP Address Management & other network info
         icon: netbox
-        ping: netbox.home.mliebman.com
         siteMonitor: https://netbox.home.mliebman.com/
     - Print/Scan:
         href: https://print-scan.home.mliebman.com/
