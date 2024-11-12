@@ -25,6 +25,9 @@ services:
     environment:
       - LANGS=en_US
       - DOCKER_ENABLE_SECURITY=false
+      - LEGAL_TERMSANDCONDITIONS=""
+      - LEGAL_PRIVACYPOLICY=
+      - UI_APPNAME=PDF Tools
 networks:
   caddy:
     external: true
