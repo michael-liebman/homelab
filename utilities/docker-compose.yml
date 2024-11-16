@@ -10,7 +10,7 @@ services:
       caddy.reverse_proxy: "{{upstreams 80}}"
       caddy.tls: internal
   stirling-pdf:
-    image: frooodle/s-pdf:0.32.0
+    image: stirlingtools/stirling-pdf:0.33.1
     container_name: pdf-tools
     restart: unless-stopped
     networks:
