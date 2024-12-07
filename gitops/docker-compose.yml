@@ -1,7 +1,7 @@
 services:
   app:
     container_name: doco-cd
-    image: ghcr.io/kimdre/doco-cd:v0.12.4
+    image: ghcr.io/kimdre/doco-cd:0.12.4
     restart: unless-stopped
     group_add:
       - 101
