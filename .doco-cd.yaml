@@ -1,0 +1,23 @@
+name: backup
+working_dir: backup
+---
+name: books
+working_dir: books
+---
+name: caddy
+working_dir: caddy
+---
+name: ghostfolio
+working_dir: ghostfolio
+---
+name: homepage
+working_dir: homepage
+---
+name: n8n
+working_dir: n8n
+---
+name: utilities
+working_dir: utilities
+---
+name: wallos
+working_dir: wallos
