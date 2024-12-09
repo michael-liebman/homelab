@@ -19,19 +19,19 @@ services:
       caddy.tls: internal
     networks:
       - caddy
-    dockge-gitops:
-      image: ghcr.io/ebaldebo/dockge-gitops:v0.2.1
-      container_name: dockge-gitops
-      restart: unless-stopped
-      environment:
-        - REPO_URL=https://github.com/michael-liebman/homelab.git # required
-        - POLLING_RATE=10m # optional
-        # Needs to be the same as the stacks directory in the dockge container
-        - DOCKGE_STACKS_DIR=/home/michael/docker
-      volumes:
-        # Needs to be the same as the stacks directory in the dockge container
-        - /home/michael/docker:/home/michael/docker
-        - /home/michael/secrets:/env # optional path to .env file
+  dockge-gitops:
+    image: ghcr.io/ebaldebo/dockge-gitops:v0.2.1
+    container_name: dockge-gitops
+    restart: unless-stopped
+    environment:
+      - REPO_URL=https://github.com/michael-liebman/homelab.git # required
+      - POLLING_RATE=10m # optional
+      # Needs to be the same as the stacks directory in the dockge container
+      - DOCKGE_STACKS_DIR=/home/michael/docker
+    volumes:
+      # Needs to be the same as the stacks directory in the dockge container
+      - /home/michael/docker:/home/michael/docker
+      - /home/michael/secrets:/env # optional path to .env file
 networks:
   caddy:
     external: true
