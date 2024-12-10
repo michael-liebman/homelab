@@ -95,6 +95,16 @@
         description: File sharing
         icon: sh-syncthing
         siteMonitor: https://syncthing.home.mliebman.com
+    - Portainer:
+        href: https://portainer.home.mliebman.com/
+        description: Server management
+        icon: portainer
+        siteMonitor: https://portainer.home.mliebman.com
+        widget:
+            type: portainer
+            url: https://portainer.home.mliebman.com
+            username: "{{HOMEPAGE_VAR_PORTAINER_USERNAME}}"
+            password: "{{HOMEPAGE_VAR_PORTAINER_PASSWORD}}"
 - RVC:
     - Home Assistant RVC:
         href: https://mlr03du7c9e421riwplae2qfz3refigs.ui.nabu.casa/
