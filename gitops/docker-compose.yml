@@ -1,37 +1,46 @@
 services:
-  dockge:
-    image: louislam/dockge:1.4.2
-    restart: unless-stopped
+  agent:
+    image: portainer/agent:2.24.1-alpine
+    environment:
+      # REQUIRED: Should be equal to the service name prefixed by "tasks." when
+      # deployed inside an overlay network
+      AGENT_CLUSTER_ADDR: tasks.agent
+      # AGENT_PORT: 9001
+      # LOG_LEVEL: debug
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./data:/app/data
-      # Stacks Directory
-      # ⚠️ READ IT CAREFULLY. If you did it wrong, your data could end up writing into a WRONG PATH.
-      # ⚠️ 1. FULL path only. No relative path (MUST)
-      # ⚠️ 2. Left Stacks Path === Right Stacks Path (MUST)
-      - /home/michael/docker:/home/michael/docker
-    environment:
-      # Tell Dockge where to find the stacks
-      - DOCKGE_STACKS_DIR=/home/michael/docker
-    labels:
-      caddy: gitops.home.mliebman.com
-      caddy.reverse_proxy: "{{upstreams 5001}}"
-      caddy.tls: internal
+      - /var/lib/docker/volumes:/var/lib/docker/volumes
     networks:
-      - caddy
-  dockge-gitops:
-    image: ghcr.io/ebaldebo/dockge-gitops:v0.2.1
-    container_name: dockge-gitops
-    restart: unless-stopped
-    environment:
-      - REPO_URL=https://github.com/michael-liebman/homelab.git # required
-      - POLLING_RATE=10m # optional
-      # Needs to be the same as the stacks directory in the dockge container
-      - DOCKGE_STACKS_DIR=/home/michael/docker
+      - agent_network
+    deploy:
+      mode: global
+      placement:
+        constraints: [node.platform.os == linux]
+
+  portainer:
+    image: portainer/portainer:2.24.1-alpine
+    command: -H tcp://tasks.agent:9001 --tlsskipverify
+    ports:
+      - "9000:9000"
+      - "8000:8000"
     volumes:
-      # Needs to be the same as the stacks directory in the dockge container
-      - /home/michael/docker:/home/michael/docker
-      - /home/michael/secrets:/env # optional path to .env file
+      - portainer_data:/data
+    networks:
+      - agent_network
+      - caddy
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints: [node.role == manager]
+    labels:
+      caddy: portainer.home.mliebman.com
+      caddy.reverse_proxy: "{{upstreams 9000}}"
+      caddy.tls: internal    
 networks:
+  agent_network:
+    driver: overlay
   caddy:
     external: true
+volumes:
+  portainer_data:
