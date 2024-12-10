@@ -18,7 +18,7 @@ services:
         constraints: [node.platform.os == linux]
 
   portainer:
-    image: portainer/portainer:2.24.1-alpine
+    image: portainer/portainer-ee:2.24.1-alpine
     command: -H tcp://tasks.agent:9001 --tlsskipverify
     ports:
       - "9000:9000"
