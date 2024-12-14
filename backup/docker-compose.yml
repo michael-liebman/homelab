@@ -29,7 +29,7 @@ services:
     volumes:
       - ./syncthing:/var/syncthing
       - ../wallos/db:/var/syncthing-storage/wallos
-      - ../../secrets/:/var/syncthing-storage/secrets
+      - /etc/docker-secrets/:/var/syncthing-storage/secrets
       - /var/backup:/var/syncthing-storage/backup
     ports:
       - 22000:22000/tcp # TCP file transfers

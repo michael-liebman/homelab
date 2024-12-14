@@ -17,7 +17,7 @@ services:
       - UPDATER_PERIOD=24h
       - DOT_PROVIDERS=quad9
     env_file:
-      - ../../secrets/gluetun.env
+      - /etc/docker-secrets/gluetun.env
     restart: unless-stopped
   readarr:
     image: lscr.io/linuxserver/readarr:nightly-version-0.4.1.2648
@@ -30,7 +30,7 @@ services:
       - PUID=1000
       - PGID=101
     env_file:
-      - ../../secrets/readarr.env
+      - /etc/docker-secrets/readarr.env
     restart: unless-stopped
     networks:
       - caddy

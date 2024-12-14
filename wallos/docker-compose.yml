@@ -8,8 +8,8 @@ services:
       TZ: 'America/New_York'
     # Volumes store your data between container upgrades
     volumes:
-      - './db:/var/www/html/db'
-      - './logos:/var/www/html/images/uploads/logos'
+      - 'wallos_db:/var/www/html/db'
+      - 'wallos_logos:/var/www/html/images/uploads/logos'
     restart: unless-stopped
     networks:
       - caddy
@@ -20,3 +20,6 @@ services:
 networks:
   caddy:
     external: true
+volumes:
+  wallos_db:
+  wallos_logos:
