@@ -1,4 +1,4 @@
 #!/bin/ash
 
-docker compose --env-file ../../secrets/ghostfolio.env "$@"
+docker compose --env-file /etc/docker-secrets/ghostfolio.env "$@"
 
