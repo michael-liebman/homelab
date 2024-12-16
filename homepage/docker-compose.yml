@@ -14,6 +14,35 @@ services:
       caddy: dashboard.home.mliebman.com
       caddy.reverse_proxy: "{{upstreams 3000}}"
       caddy.tls: internal
+    secrets:
+      - HOMEPAGE_VAR_VM0_TOKEN_ID
+      - HOMEPAGE_VAR_VM0_SECRET
+      - HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY
+      - HOMEPAGE_GHOST_FOLIO_KEY
+      - HOMEPAGE_QBITTORRENT_USERNAME
+      - HOMEPAGE_QBITTORRENT_PASSWORD
+      - HOMEPAGE_READARR_KEY
+      - HOMEPAGE_VAR_PORTAINER_USERNAME
+      - HOMEPAGE_VAR_PORTAINER_PASSWORD
 networks:
   caddy:
+    external: true
+secrets:
+  HOMEPAGE_VAR_VM0_TOKEN_ID:
+    external: true
+  HOMEPAGE_VAR_VM0_SECRET:
+    external: true
+  HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY:
+    external: true
+  HOMEPAGE_GHOST_FOLIO_KEY:
+    external: true
+  HOMEPAGE_QBITTORRENT_USERNAME:
+    external: true
+  HOMEPAGE_QBITTORRENT_PASSWORD:
+    external: true
+  HOMEPAGE_READARR_KEY:
+    external: true
+  HOMEPAGE_VAR_PORTAINER_USERNAME:
+    external: true
+  HOMEPAGE_VAR_PORTAINER_PASSWORD:
     external: true
