@@ -20,7 +20,7 @@ services:
          export HOMEPAGE_READARR_KEY=$$(cat /run/secrets/HOMEPAGE_READARR_KEY) ;
          export HOMEPAGE_VAR_PORTAINER_USERNAME=$$(cat /run/secrets/HOMEPAGE_VAR_PORTAINER_USERNAME) ;
          export HOMEPAGE_VAR_PORTAINER_PASSWORD=$$(cat /run/secrets/HOMEPAGE_VAR_PORTAINER_PASSWORD) ;
-         source /entrypoint.sh",
+         source /usr/local/bin/docker-entrypoint.sh",
       ]
     restart: unless-stopped
     networks:
