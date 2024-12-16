@@ -7,6 +7,21 @@ services:
     volumes:
       - ./config:/app/config # Make sure your local config directory exists
       - /var/run/docker.sock:/var/run/docker.sock # (optional) For docker integrations
+    entrypoint:
+      [
+        "/bin/sh",
+        "-c",
+        "export HOMEPAGE_VAR_VM0_TOKEN_ID=$$(cat /run/secrets/HOMEPAGE_VAR_VM0_TOKEN_ID) ;
+         export HOMEPAGE_VAR_VM0_SECRET=$$(cat /run/secrets/HOMEPAGE_VAR_VM0_SECRET) ;
+         export HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY=$$(cat /run/secrets/HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY) ;
+         export HOMEPAGE_GHOST_FOLIO_KEY=$$(cat /run/secrets/HOMEPAGE_GHOST_FOLIO_KEY) ;
+         export HOMEPAGE_QBITTORRENT_USERNAME=$$(cat /run/secrets/HOMEPAGE_QBITTORRENT_USERNAME) ;
+         export HOMEPAGE_QBITTORRENT_PASSWORD=$$(cat /run/secrets/HOMEPAGE_QBITTORRENT_PASSWORD) ;
+         export HOMEPAGE_READARR_KEY=$$(cat /run/secrets/HOMEPAGE_READARR_KEY) ;
+         export HOMEPAGE_VAR_PORTAINER_USERNAME=$$(cat /run/secrets/HOMEPAGE_VAR_PORTAINER_USERNAME) ;
+         export HOMEPAGE_VAR_PORTAINER_PASSWORD=$$(cat /run/secrets/HOMEPAGE_VAR_PORTAINER_PASSWORD) ;
+         source /entrypoint.sh",
+      ]
     restart: unless-stopped
     networks:
       - caddy
