@@ -1,0 +1,25 @@
+name: Validate Configurations
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+jobs:
+  validate-configuration:  
+    name: Validate Configuration
+    runs-on: ubuntu-22.04
+    permissions:
+      issues: write
+      contents: read
+    steps:
+      - uses: actions/checkout@v3
+      - name: run kics Scan
+        uses: checkmarx/kics-github-action@v2.1.3
+        with:
+          path: '.'
+          output_path: myResults/
+          ignore_on_exit: results # TODO: ignore results until issues can be dealt with
+          token: ${{ secrets.GITHUB_TOKEN }}
+          enable_comments: true
+      # Display the results in json format
+      - name: display kics results
+        run: |
+          cat myResults/results.json
