@@ -8,6 +8,7 @@ jobs:
     runs-on: ubuntu-22.04
     permissions:
       issues: write
+      contents: read
     steps:
       - uses: actions/checkout@v3
       - name: run kics Scan
