@@ -4,8 +4,10 @@ services:
     hostname: dmarc-report
     container_name: dmarc-report
     depends_on:
-      db:
-        condition: service_healthy
+      # FIXME: Swarm doesn't support this syntax yet
+      # db:
+      #   condition: service_healthy
+      - db
     environment:
       - "REPORT_DB_TYPE=pgsql"
       - "REPORT_DB_PORT=5432"
