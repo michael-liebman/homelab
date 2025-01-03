@@ -1,0 +1,57 @@
+services:
+  dmarc-report:
+    image: "gutmensch/dmarc-report:1.4.5"
+    hostname: dmarc-report
+    container_name: dmarc-report
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - "REPORT_DB_TYPE=pgsql"
+      - "REPORT_DB_PORT=5432"
+      - "REPORT_DB_HOST=dmarc-db"
+      - "REPORT_DB_NAME=dmarc_report"
+      - "REPORT_DB_USER=dmarc_report"
+      - "REPORT_DB_PASS=${DMARC_DB_PASSWORD}"
+      - "PARSER_IMAP_SERVER=${IMAP_SERVER}"
+      - "PARSER_IMAP_PORT=${IMAP_PORT:-993}"
+      - "PARSER_IMAP_USER=${DMARC_EMAIL}"
+      - "PARSER_IMAP_PASS=${DMARC_PASSWORD}"
+      - "PARSER_IMAP_READ_FOLDER=Inbox"
+      - "PARSER_IMAP_MOVE_FOLDER=${IMAP_MOVE_FOLDER:-processed}"
+      - "PARSER_IMAP_MOVE_FOLDER_ERR=${IMAP_MOVE_FOLDER_ERR:-error}"
+      - "PARSER_IMAP_SSL=1"
+      - "PARSER_IMAP_TLS=0"
+    labels:
+      caddy: dmarc-report.home.mliebman.com
+      caddy.reverse_proxy: "{{upstreams 80}}"
+      caddy.tls: internal
+    networks:
+      - internal
+      - caddy
+
+  db:
+    image: postgres:17.2-alpine3.21
+    hostname: dmarc-db
+    container_name: dmarc-db
+    environment:
+      - "POSTGRES_DB=dmarc_report"
+      - "POSTGRES_USER=dmarc_report"
+      - "POSTGRES_PASSWORD=${DMARC_DB_PASSWORD}"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dmarc_report"]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    networks:
+      - internal
+
+networks:
+  internal:
+  caddy:
+    external: true
+
+volumes:
+  db-data:
