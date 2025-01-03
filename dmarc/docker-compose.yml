@@ -20,6 +20,8 @@ services:
       - "PARSER_IMAP_READ_FOLDER=Inbox"
       - "PARSER_IMAP_MOVE_FOLDER=${IMAP_MOVE_FOLDER:-processed}"
       - "PARSER_IMAP_MOVE_FOLDER_ERR=${IMAP_MOVE_FOLDER_ERR:-error}"
+      - "PARSER_IMAP_SSL=1"
+      - "PARSER_IMAP_TLS=0"
     labels:
       caddy: dmarc-report.home.mliebman.com
       caddy.reverse_proxy: "{{upstreams 80}}"

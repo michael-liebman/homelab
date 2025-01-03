@@ -134,3 +134,8 @@
             type: uptimerobot
             url: https://api.uptimerobot.com
             key: "{{HOMEPAGE_VAR_UPTIME_ROBOT_RO_KEY}}"
+    - DMARC Report:
+        href: https://dmarc-report.home.mliebman.com/
+        description: Email delivery reports
+        icon: mdi-package-check
+        siteMonitor: https://dmarc-report.home.mliebman.com
