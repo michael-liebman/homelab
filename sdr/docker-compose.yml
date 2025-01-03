@@ -1,0 +1,15 @@
+services:
+  rtl_433:
+    image: hertzg/rtl_433:24.10-alpine-3.21.0
+    command:
+      - "-Mlevel"
+      - "-Mbits"
+      - "-Mprotocol"
+      - "-Mstats:2:300"
+      - "-Mtime:unix:usec:utc"
+      - "-Yautolevel"
+      - "-Yminmax"
+      - "-Ymagest"
+      - "-F$$MQTT_URL"
+    devices:
+      - "/dev/bus/usb/002/004"
