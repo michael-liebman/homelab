@@ -9,6 +9,7 @@ services:
     environment:
       - "REPORT_DB_TYPE=pgsql"
       - "REPORT_DB_PORT=5432"
+      - "REPORT_DB_HOST=dmarc-db"
       - "REPORT_DB_NAME=dmarc_report"
       - "REPORT_DB_USER=dmarc_report"
       - "REPORT_DB_PASS=${DMARC_DB_PASSWORD}"
@@ -29,6 +30,8 @@ services:
 
   db:
     image: postgres:17.2-alpine3.21
+    hostname: dmarc-db
+    container_name: dmarc-db
     environment:
       - "POSTGRES_DB=dmarc_report"
       - "POSTGRES_USER=dmarc_report"
