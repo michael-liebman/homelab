@@ -1,6 +1,6 @@
 services:
   ghostfolio:
-    image: docker.io/ghostfolio/ghostfolio:2.136.0
+    image: docker.io/ghostfolio/ghostfolio:2.137.1
     init: true
     cap_drop:
       - ALL
