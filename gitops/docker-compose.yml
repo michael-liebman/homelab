@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer/portainer-ee:2.28.1-alpine
+    image: portainer/portainer-ee:2.29.0-alpine
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer_data:/data
