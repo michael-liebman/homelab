@@ -4,5 +4,8 @@
     "config:recommended",
     "mergeConfidence:all-badges",
     ":automergeMinor"
+  ],
+  "automergeSchedule": [
+    "* 0-3 * * 4"
   ]
 }
