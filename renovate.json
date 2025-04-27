@@ -5,6 +5,9 @@
     "mergeConfidence:all-badges",
     ":automergeMinor"
   ],
+  "schedule": [
+    "* 0-3 * * 4"
+  ],
   "automergeSchedule": [
     "* 0-3 * * 4"
   ]
